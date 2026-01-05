@@ -1,0 +1,35 @@
+.Profile {
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-data {
+  margin: 2rem;
+  display: block;
+  flex-direction: column;
+  justify-content: start;
+  text-align: start;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 0.8rem;
+  background-color: #c4c4c4;
+  width: 20rem;
+  height: 10rem;
+  box-shadow: 2px 6px 8px black;
+}
+
+.profile-data p {
+  background-color: #c4c4c4;
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+
+.profile-data p b {
+  background-color: #c4c4c4;
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}

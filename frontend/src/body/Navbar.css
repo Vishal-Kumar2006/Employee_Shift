@@ -1,0 +1,25 @@
+.Navbar {
+  display: flex;
+  height: 3.5rem;
+  background-color: rgba(147, 147, 147, 0.801);
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  position: sticky;
+  box-shadow: 2px 5px 10px rgb(187, 187, 187);
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-part {
+  background-color: rgba(194, 194, 194, 0);
+  margin: 0.5rem;
+  z-index: 1000;
+}
+
+.navbar-part a {
+  background-color: rgba(194, 194, 194, 0);
+  margin: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}

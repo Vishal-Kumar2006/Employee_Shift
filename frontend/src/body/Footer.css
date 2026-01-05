@@ -1,0 +1,38 @@
+.Footer {
+  display: block;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(51, 51, 51);
+}
+
+.footer-upper {
+  display: flex;
+  background-color: rgb(69, 69, 69);
+  height: 4rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-mid {
+  background-color: rgba(125, 16, 16, 0);
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-mid a {
+  background-color: rgba(192, 97, 97, 0);
+  color: rgb(0, 105, 197);
+  margin: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-lower {
+  background-color: rgb(24, 24, 24);
+  height: 20rem;
+}

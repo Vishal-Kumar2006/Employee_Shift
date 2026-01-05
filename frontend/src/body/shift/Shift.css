@@ -1,0 +1,62 @@
+.Shift {
+  display: block;
+  flex-direction: column;
+  text-align: start;
+  justify-content: start;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 2px;
+  background-color: #d9d9d9;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 2px 4px 6px black;
+}
+
+.shift :hover {
+  cursor: pointer;
+  box-shadow: 2px 8px 10px black;
+}
+
+.shift-upper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+
+.shift-upper h2 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  height: 8rem;
+  font-size: 2rem;
+}
+
+.shift-below > p {
+  text-align: center;
+}
+
+.time {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* For All Shifts Component */
+.AllShift {
+  width: 95vw;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.shifts {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}

@@ -1,0 +1,74 @@
+/* For Show Employee Class */
+
+.All-employees {
+  margin-top: 3rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.employees-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.employees-block p {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* For Employee Class */
+.Employee {
+  border: 2px solid black;
+  display: block;
+  flex-direction: column;
+  text-align: start;
+  justify-content: start;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 2px 2px 6px black;
+}
+
+.employee-upper {
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #c1c1c1;
+  border-radius: 8px 8px 0 0;
+}
+
+.employee-upper h2 {
+  background-color: #c1c1c1;
+  font-size: 3rem;
+}
+
+.employee-lower {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+}
+
+#small-button {
+  margin: 1rem;
+  font-size: 1rem;
+  padding: 0.4rem;
+  width: 8rem;
+}
+
+/* For Show Employee Class  */
+.ShowEmployee {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: start;
+  align-items: center;
+}
