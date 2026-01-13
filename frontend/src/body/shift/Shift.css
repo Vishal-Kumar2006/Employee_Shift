@@ -60,3 +60,58 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 }
+
+/* For Create Shift */
+.CreateShift {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  margin: 3rem;
+}
+
+.CreateShift h1 {
+  font-size: 2rem;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: start;
+  align-items: start;
+  margin: 2rem;
+}
+
+.input-block label {
+  font-size: 1.5rem;
+  flex-direction: column;
+}
+
+.input-block-time {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  align-items: start;
+  justify-content: start;
+  padding: 0;
+}
+
+.time > label {
+  font-size: 1.2rem;
+}
+
+.time > input {
+  width: 12rem;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}

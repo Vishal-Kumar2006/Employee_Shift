@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import API_URL from "../../config/api";
 import { useParams, useNavigate } from "react-router-dom";
+import "./Shift.css";
 
 const CreateShift = () => {
   const { id } = useParams();
@@ -63,7 +64,10 @@ const CreateShift = () => {
       <h1> Create a new Shift for the Employee</h1>
       <form onSubmit={handleSubmit}>
         <div className="input-block">
-          <label htmlFor="date">Enter Date</label>
+          <label htmlFor="date">
+            {" "}
+            <b>Enter Date</b>
+          </label>
           <input
             type="date"
             value={shift.date}
@@ -73,47 +77,67 @@ const CreateShift = () => {
         </div>
 
         <div className="input-block">
-          <label>Enter Start Time</label>
+          <label>
+            <b>Enter Start Time</b>{" "}
+          </label>
 
-          <input
-            type="number"
-            min="0"
-            max="23"
-            required
-            value={shift.startTime[0]}
-            onChange={(e) => updateTime("startTime", 0, e.target.value)}
-          />
+          <div className="input-block-time">
+            <div className="time">
+              <label>Hours : </label>
+              <input
+                type="number"
+                min="0"
+                max="23"
+                required
+                value={shift.startTime[0]}
+                onChange={(e) => updateTime("startTime", 0, e.target.value)}
+              />
+            </div>
 
-          <input
-            type="number"
-            min="0"
-            max="59"
-            required
-            value={shift.startTime[1]}
-            onChange={(e) => updateTime("startTime", 1, e.target.value)}
-          />
+            <div className="time">
+              <label>Mins</label>
+              <input
+                type="number"
+                min="0"
+                max="59"
+                required
+                value={shift.startTime[1]}
+                onChange={(e) => updateTime("startTime", 1, e.target.value)}
+              />
+            </div>
+          </div>
         </div>
 
         <div className="input-block">
-          <label>Enter End Time</label>
+          <label>
+            {" "}
+            <b>Enter End Time</b>{" "}
+          </label>
+          <div className="input-block-time">
+            <div className="time">
+              <label htmlFor="">Hours :</label>
+              <input
+                type="number"
+                min="0"
+                max="23"
+                required
+                value={shift.endTime[0]}
+                onChange={(e) => updateTime("endTime", 0, e.target.value)}
+              />
+            </div>
 
-          <input
-            type="number"
-            min="0"
-            max="23"
-            required
-            value={shift.endTime[0]}
-            onChange={(e) => updateTime("endTime", 0, e.target.value)}
-          />
-
-          <input
-            type="number"
-            min="0"
-            max="59"
-            required
-            value={shift.endTime[1]}
-            onChange={(e) => updateTime("endTime", 1, e.target.value)}
-          />
+            <div className="time">
+              <label>Mins</label>
+              <input
+                type="number"
+                min="0"
+                max="59"
+                required
+                value={shift.endTime[1]}
+                onChange={(e) => updateTime("endTime", 1, e.target.value)}
+              />
+            </div>
+          </div>
         </div>
 
         <button type="submit">Create Shift</button>
