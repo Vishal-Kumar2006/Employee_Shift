@@ -1,90 +1,154 @@
-# 📄 Employee Shift Board
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Shift Board</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code, pre {
+      background: #eee;
+      padding: 10px;
+      display: block;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
 
-**Assignment Name:** Employee Shift Board **Role:** Full Stack Developer
-**Goal:** Employee Shift Board — Mini HR Utility
+<h1>📄 Employee Shift Board</h1>
 
-A practical full-stack application to manage employee shifts with
-authentication, role-based access control, and strict business rules. This
-project focuses on real-world logic, backend validation, and clean architecture
-rather than UI gimmicks.
+<p><strong>Assignment Name:</strong> Employee Shift Board</p>
+<p><strong>Role:</strong> Full Stack Developer</p>
+<p><strong>Goal:</strong> Mini HR Utility to manage employee shifts with real-world constraints.</p>
 
----
+<div class="section">
+<h2>🎯 Objective</h2>
+<ul>
+  <li>Secure authentication using JWT</li>
+  <li>Admin-controlled shift management</li>
+  <li>Users can view only their own shifts</li>
+  <li>Enforce real business rules (no overlaps, minimum hours)</li>
+</ul>
+</div>
 
-## 🎯 Objective
+<div class="section">
+<h2>🔧 Core Features</h2>
 
-Build a minimal yet robust full-stack system that allows:
+<h3>1. Authentication & Authorization</h3>
+<ul>
+  <li>JWT-based login system</li>
+  <li>Role-based access (Admin / User)</li>
+  <li>Protected routes</li>
+</ul>
 
-- Secure authentication using JWT
-- Admin-controlled shift management
-- Normal users to view only their own shifts
-- Enforcement of real business constraints such as shift overlap prevention and
-  minimum working hours
+<h3>2. Employee Shift Board</h3>
+<p><strong>Employee Fields:</strong></p>
+<ul>
+  <li>Name</li>
+  <li>Employee Code</li>
+  <li>Department</li>
+</ul>
 
----
+<p><strong>Shift Fields:</strong></p>
+<ul>
+  <li>Date</li>
+  <li>Start Time</li>
+  <li>End Time</li>
+</ul>
+</div>
 
-## 🔧 Core Features
+<div class="section">
+<h2>❗ Business Rules</h2>
+<ol>
+  <li><strong>No Overlapping Shifts:</strong> Same employee cannot have overlapping shifts.</li>
+  <li><strong>Minimum Duration:</strong> Each shift must be at least 4 hours.</li>
+  <li><strong>Role-Based Access:</strong>
+    <ul>
+      <li>Users → Only their shifts</li>
+      <li>Admins → All shifts</li>
+    </ul>
+  </li>
+</ol>
+</div>
 
-### 1. Authentication & Authorization
+<div class="section">
+<h2>🖥 Backend</h2>
 
-- JWT-based login system
-- Role-based access control (Admin / Normal User)
-- Protected routes on both frontend and backend
-- Pre-seeded users for evaluation
+<h3>Tech Stack</h3>
+<ul>
+  <li>Node.js</li>
+  <li>Express.js</li>
+  <li>MongoDB (Mongoose)</li>
+  <li>JWT</li>
+</ul>
 
-### 2. Employee Shift Board
+<h3>API Endpoints</h3>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Endpoint</th>
+    <th>Description</th>
+    <th>Access</th>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>/login</td>
+    <td>Authenticate user</td>
+    <td>Public</td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td>/employees</td>
+    <td>Fetch employees</td>
+    <td>Admin</td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>/shifts</td>
+    <td>Create shift</td>
+    <td>Admin</td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td>/shifts</td>
+    <td>Fetch shifts</td>
+    <td>Admin/User</td>
+  </tr>
+  <tr>
+    <td>DELETE</td>
+    <td>/shift/:id</td>
+    <td>Delete shift</td>
+    <td>Admin</td>
+  </tr>
+</table>
 
-#### Employee Fields
-
-- Name
-- Employee Code
-- Department
-
-#### Shift Fields
-
-- Date
-- Start Time
-- End Time
-
----
-
-## ❗ Mandatory Business Rules
-
-These rules are enforced strictly at the backend level:
-
-1. **No Overlapping Shifts** An employee cannot be assigned multiple shifts that
-   overlap on the same date.
-
-2. **Minimum Shift Duration** Each shift must be at least **4 hours long**.
-
-3. **Role-Based Data Access**
-
-   - Normal users can only view their own shifts
-   - Admin users can view and manage all employee shifts
-
----
-
-## 🖥 Backend Details
-
-### Technology Stack
-
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- JWT for authentication
-
-### REST API Endpoints
-
-| Method | Endpoint                      | Description                      | Access       |
-| ------ | ----------------------------- | -------------------------------- | ------------ |
-| POST   | `/login`                      | Authenticate user and return JWT | Public       |
-| GET    | `/employees`                  | Fetch all employees              | Admin        |
-| POST   | `/shifts`                     | Create a new shift               | Admin        |
-| GET    | `/shifts?employee=xx&date=xx` | Fetch shifts (filtered)          | Admin / User |
-| DELETE | `/shift/:id`                  | Delete a shift                   | Admin        |
-
-### Backend Architecture
-
-```
+<h3>Architecture</h3>
+<pre>
 backend/
  ├── controllers/
  ├── services/
@@ -93,132 +157,92 @@ backend/
  ├── middleware/
  ├── validations/
  └── utils/
-```
+</pre>
+</div>
 
-### Backend Highlights
+<div class="section">
+<h2>💻 Frontend</h2>
 
-- Centralized error handling
-- Request payload validation
-- Secure JWT verification
-- Role-based middleware enforcement
-- Clean separation of concerns
+<h3>Tech Stack</h3>
+<ul>
+  <li>React (Vite)</li>
+  <li>Axios</li>
+  <li>React Router</li>
+</ul>
 
----
+<h3>Pages</h3>
+<ul>
+  <li>Login Page</li>
+  <li>Dashboard</li>
+  <li>Shift Form (Admin)</li>
+  <li>Shift Table</li>
+</ul>
+</div>
 
-## 💻 Frontend Details
-
-### Technology Stack
-
-- React (Vite)
-- Axios
-- React Router DOM
-
-### Screens & Components
-
-- Login Page
-- Dashboard
-- Shift Assignment Form (Admin only)
-- Shifts Table View
-
-### UI Considerations
-
-- API error messages displayed clearly
-- Responsive layout
-- Minimal and functional design
-
----
-
-## 🔑 Demo Login Credentials (Seeded)
-
-The following user is hard-coded in the seed data and available in the deployed
-version for reviewers:
-
-```
+<div class="section">
+<h2>🔑 Demo Credentials</h2>
+<pre>
 Email: hire-me@anshumat.org
 Password: HireMe@2025!
-```
+</pre>
+</div>
 
----
+<div class="section">
+<h2>⚙️ Setup</h2>
 
-## ⚙️ Setup Instructions
-
-### Prerequisites
-
-- Node.js (v18+ recommended)
-- MongoDB (local or cloud)
-
-### 1. Clone the Repository
-
-```bash
-git clone <your-github-repo-url>
-cd employee-shift-board
-```
-
-### 2. Backend Setup
-
-```bash
+<h3>Backend</h3>
+<pre>
 cd backend
 npm install
 npm run dev
-```
+</pre>
 
-Create a `.env` file in the backend directory:
-
-```
+<p>Create <code>.env</code> file:</p>
+<pre>
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-```
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret
+</pre>
 
-### 3. Frontend Setup
-
-```bash
+<h3>Frontend</h3>
+<pre>
 cd frontend
 npm install
 npm run dev
-```
+</pre>
+</div>
 
----
+<div class="section">
+<h2>🧪 Evaluation Focus</h2>
+<ul>
+  <li>Business rule enforcement</li>
+  <li>Code quality</li>
+  <li>Edge case handling</li>
+  <li>API validation</li>
+</ul>
+</div>
 
-## 📮 Postman Collection
+<div class="section">
+<h2>⚠️ Limitations</h2>
+<ul>
+  <li>No user registration</li>
+  <li>Single-day shifts only</li>
+  <li>Simple UI (logic-focused)</li>
+</ul>
+</div>
 
-A Postman collection is included in the repository to test all APIs,
-authentication, and role-based access.
-
----
-
-## 🧪 Evaluation Focus Areas
-
-- Correct enforcement of business rules
-- Clean and maintainable code
-- Edge case handling (overlaps, invalid times, unauthorized access)
-- API correctness and validation
-- Database schema design
-- Role-based access control implementation
-
----
-
-## ⚠️ Known Limitations / Assumptions
-
-- No user self-registration (users are seeded)
-- Shifts are assumed to be within a single calendar day
-- UI intentionally kept simple to emphasize logic and correctness
-
----
-
-## 🏁 Submission Format
-
-Submit the following details in the assignment form:
-
-```
+<div class="section">
+<h2>🏁 Submission</h2>
+<pre>
 Name:
 GitHub Repo:
-Live Demo Link:
-Tech Stack Used:
-Notes for Reviewer (optional):
-```
+Live Demo:
+Tech Stack:
+Notes:
+</pre>
+</div>
 
----
+<p>✅ <strong>This project strictly follows all assignment rules.</strong></p>
 
-✅ **This project strictly follows the assignment specifications and business
-rules.**
+</body>
+</html>
