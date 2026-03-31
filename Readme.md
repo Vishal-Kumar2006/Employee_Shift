@@ -4,27 +4,29 @@
 <p><strong>Role:</strong> Full Stack Developer</p>
 <p><strong>Goal:</strong> Mini HR Utility to manage employee shifts with real-world constraints.</p>
 
-<div class="section">
+<hr/>
+
 <h2>🎯 Objective</h2>
 <ul>
   <li>Secure authentication using JWT</li>
   <li>Admin-controlled shift management</li>
   <li>Users can view only their own shifts</li>
-  <li>Enforce real business rules (no overlaps, minimum hours)</li>
+  <li>Enforce business rules like shift overlap prevention and minimum working hours</li>
 </ul>
-</div>
 
-<div class="section">
+<hr/>
+
 <h2>🔧 Core Features</h2>
 
-<h3>1. Authentication & Authorization</h3>
+<h3>Authentication & Authorization</h3>
 <ul>
   <li>JWT-based login system</li>
-  <li>Role-based access (Admin / User)</li>
-  <li>Protected routes</li>
+  <li>Role-based access control (Admin / User)</li>
+  <li>Protected routes (frontend & backend)</li>
 </ul>
 
-<h3>2. Employee Shift Board</h3>
+<h3>Employee Shift Board</h3>
+
 <p><strong>Employee Fields:</strong></p>
 <ul>
   <li>Name</li>
@@ -38,23 +40,23 @@
   <li>Start Time</li>
   <li>End Time</li>
 </ul>
-</div>
 
-<div class="section">
+<hr/>
+
 <h2>❗ Business Rules</h2>
 <ol>
-  <li><strong>No Overlapping Shifts:</strong> Same employee cannot have overlapping shifts.</li>
+  <li><strong>No Overlapping Shifts:</strong> An employee cannot have overlapping shifts on the same date.</li>
   <li><strong>Minimum Duration:</strong> Each shift must be at least 4 hours.</li>
   <li><strong>Role-Based Access:</strong>
     <ul>
-      <li>Users → Only their shifts</li>
-      <li>Admins → All shifts</li>
+      <li>Users → Only their own shifts</li>
+      <li>Admins → Manage all shifts</li>
     </ul>
   </li>
 </ol>
-</div>
 
-<div class="section">
+<hr/>
+
 <h2>🖥 Backend</h2>
 
 <h3>Tech Stack</h3>
@@ -62,10 +64,11 @@
   <li>Node.js</li>
   <li>Express.js</li>
   <li>MongoDB (Mongoose)</li>
-  <li>JWT</li>
+  <li>JWT Authentication</li>
 </ul>
 
 <h3>API Endpoints</h3>
+
 <table>
   <tr>
     <th>Method</th>
@@ -82,7 +85,7 @@
   <tr>
     <td>GET</td>
     <td>/employees</td>
-    <td>Fetch employees</td>
+    <td>Fetch all employees</td>
     <td>Admin</td>
   </tr>
   <tr>
@@ -106,6 +109,7 @@
 </table>
 
 <h3>Architecture</h3>
+
 <pre>
 backend/
  ├── controllers/
@@ -116,9 +120,9 @@ backend/
  ├── validations/
  └── utils/
 </pre>
-</div>
 
-<div class="section">
+<hr/>
+
 <h2>💻 Frontend</h2>
 
 <h3>Tech Stack</h3>
@@ -132,21 +136,22 @@ backend/
 <ul>
   <li>Login Page</li>
   <li>Dashboard</li>
-  <li>Shift Form (Admin)</li>
-  <li>Shift Table</li>
+  <li>Shift Assignment Form (Admin)</li>
+  <li>Shifts Table View</li>
 </ul>
-</div>
 
-<div class="section">
+<hr/>
+
 <h2>🔑 Demo Credentials</h2>
+
 <pre>
 Email: hire-me@anshumat.org
 Password: HireMe@2025!
 </pre>
-</div>
 
-<div class="section">
-<h2>⚙️ Setup</h2>
+<hr/>
+
+<h2>⚙️ Setup Instructions</h2>
 
 <h3>Backend</h3>
 <pre>
@@ -155,7 +160,8 @@ npm install
 npm run dev
 </pre>
 
-<p>Create <code>.env</code> file:</p>
+<p>Create a <code>.env</code> file:</p>
+
 <pre>
 PORT=5000
 MONGO_URI=your_mongodb_connection
@@ -168,29 +174,30 @@ cd frontend
 npm install
 npm run dev
 </pre>
-</div>
 
-<div class="section">
+<hr/>
+
 <h2>🧪 Evaluation Focus</h2>
 <ul>
   <li>Business rule enforcement</li>
-  <li>Code quality</li>
+  <li>Clean and maintainable code</li>
   <li>Edge case handling</li>
   <li>API validation</li>
 </ul>
-</div>
 
-<div class="section">
+<hr/>
+
 <h2>⚠️ Limitations</h2>
 <ul>
-  <li>No user registration</li>
-  <li>Single-day shifts only</li>
-  <li>Simple UI (logic-focused)</li>
+  <li>No user self-registration</li>
+  <li>Shifts are limited to a single day</li>
+  <li>UI is minimal (focus on logic)</li>
 </ul>
-</div>
 
-<div class="section">
+<hr/>
+
 <h2>🏁 Submission</h2>
+
 <pre>
 Name:
 GitHub Repo:
@@ -198,9 +205,5 @@ Live Demo:
 Tech Stack:
 Notes:
 </pre>
-</div>
 
-<p>✅ <strong>This project strictly follows all assignment rules.</strong></p>
-
-</body>
-</html>
+<p>✅ <strong>This project strictly follows all assignment rules and requirements.</strong></p>
